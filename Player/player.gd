@@ -3,9 +3,36 @@ extends CharacterBody2D
 
 var movement_speed = 40.0
 @export var hp = 80
+
+#Attacks
+var iceSpear = preload("res://Textures/Items/Weapons/ice_spear.png")
+
+
+#AttackNodes
+@onready var iceSpearTimer = get_node("%IceSpearTime")
+@onready var iceSpearAttackTimer = get_node("%IceSpearAttackTimer")
+
+#IceSpear
+var icespear_ammo = 0 
+var icespear_baseammo = 1
+var icespear_attackspeed = 1.5
+var icespear_level = 1
+
+#Enemy Related
+var enemy_close = []
+
 @onready var sprite = $Sprite2D
 @onready var walkTimer = get_node("walkTimer")
 
+func _ready():
+	attack()
+
+
+func attack():
+	if icespear_level > 0:
+		iceSpearTimer.wait_time = icespear_attackspeed
+		if iceSpearTimer.is_stopped():
+			iceSpearTimer.start()
 
 func _physics_process(delta):
 	movement()

@@ -37,6 +37,14 @@ collision_mask = 2
 position = Vector2(2, 3)
 shape = SubResource("RectangleShape2D_c2bfb")
 
+[node name="Attack" type="Node2D" parent="."]
+
+[node name="IceSpearTime" type="Timer" parent="Attack"]
+unique_name_in_owner = true
+
+[node name="IceSpearAttackTimer" type="Timer" parent="Attack/IceSpearTime"]
+unique_name_in_owner = true
+
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 
 [editable path="HurtBox"]
