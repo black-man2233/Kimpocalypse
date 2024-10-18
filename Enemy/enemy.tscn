@@ -47,13 +47,15 @@ _data = {
 "walk": SubResource("Animation_3a078")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t0ey"]
-size = Vector2(19, 25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hi3n"]
+size = Vector2(20, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3hgg"]
 size = Vector2(10.5, 18)
 
 [node name="enemy_kolbold_weak" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_6d28r")
 
@@ -72,13 +74,12 @@ libraries = {
 }
 
 [node name="HurtBox" parent="." instance=ExtResource("3_63rwf")]
-visible = false
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 position = Vector2(1.5, 2.5)
-shape = SubResource("RectangleShape2D_7t0ey")
+shape = SubResource("RectangleShape2D_6hi3n")
 
 [node name="HitBox" parent="." instance=ExtResource("4_1gaxp")]
 collision_layer = 2
