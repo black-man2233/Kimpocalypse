@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sby1w"]
 size = Vector2(7.77818, 35.3553)
 
-[node name="IceSpear" type="Area2D"]
+[node name="IceSpear" type="Area2D" groups=["attack"]]
 top_level = true
 scale = Vector2(0.1, 0.1)
 collision_layer = 4
@@ -18,7 +18,7 @@ script = ExtResource("1_6a61h")
 texture = ExtResource("1_w1ihv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.25, -0.25)
+position = Vector2(0.5, -1)
 rotation = -0.785398
 shape = SubResource("RectangleShape2D_sby1w")
 
